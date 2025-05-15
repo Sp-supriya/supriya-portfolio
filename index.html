@@ -1,163 +1,426 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Supriya Sri | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Supriya Sri Perambudhur - Portfolio</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+    rel="stylesheet"
+  />
   <style>
+    /* Base Reset */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
     }
+
     body {
-      background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
-      color: #333;
-      line-height: 1.6;
-      padding: 20px;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #7f00ff, #e100ff);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
     }
+
+    .container {
+      background: #1b0e3a;
+      max-width: 900px;
+      width: 100%;
+      border-radius: 15px;
+      padding: 2rem 3rem;
+      box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+    }
+
+    /* Header */
     header {
       text-align: center;
-      padding: 40px 20px;
-      background: #ffffffaa;
-      border-radius: 20px;
-      margin-bottom: 20px;
+      margin-bottom: 2rem;
     }
-    header h1 {
-      font-size: 2.5rem;
-      color: #d63031;
+
+    .profile-pic {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #e100ff;
+      margin: 0 auto 1rem;
+      background: #4b0082;
+      display: block;
     }
-    header p {
-      font-size: 1.2rem;
-      color: #2d3436;
-    }
-    nav {
-      margin-top: 15px;
-    }
-    nav a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #0984e3;
+
+    h1 {
       font-weight: 600;
+      font-size: 2.5rem;
+      margin-bottom: 0.3rem;
     }
-    section {
-      background: #fff;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
+
     h2 {
-      color: #6c5ce7;
-      margin-bottom: 10px;
+      font-weight: 300;
+      font-size: 1.1rem;
+      color: #d9b3ff;
+      margin-bottom: 1rem;
     }
-    ul {
-      list-style: inside disc;
-      padding-left: 10px;
+
+    /* Contact & Social Links */
+    .contact-info {
+      font-weight: 400;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.2rem;
     }
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      color: #2d3436;
+
+    .contact-info a {
+      color: #e100ff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .contact-info a:hover {
+      color: #7f00ff;
+    }
+
+    /* Section Titles */
+    section h3 {
+      font-weight: 600;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #e100ff;
+      padding-bottom: 0.3rem;
+    }
+
+    /* About Section */
+    #about p {
+      line-height: 1.5;
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+
+    /* Skills */
+    #skills ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.5rem;
+    }
+
+    #skills li {
+      background: #4b0082;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-weight: 400;
       font-size: 0.9rem;
+      transition: background 0.3s ease;
+      cursor: default;
     }
-    a {
-      color: #e17055;
+
+    #skills li:hover {
+      background: #e100ff;
     }
-    div {
-      margin-bottom: 15px;
+
+    /* Projects */
+    #projects ul {
+      list-style: none;
+    }
+
+    #projects li {
+      margin-bottom: 1rem;
+    }
+
+    #projects a {
+      color: #d9b3ff;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    #projects a:hover {
+      color: #e100ff;
+      text-decoration: underline;
+    }
+
+    /* Certifications, Achievements */
+    #certifications ul,
+    #achievements ul {
+      list-style: none;
+      padding-left: 1.2rem;
+    }
+
+    #certifications li,
+    #achievements li {
+      margin-bottom: 0.6rem;
+      line-height: 1.3;
+      font-weight: 300;
+    }
+
+    /* Contact Form */
+    #contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    #contact label {
+      font-weight: 500;
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    #contact input,
+    #contact textarea {
+      padding: 0.7rem 1rem;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+      resize: vertical;
+      font-family: "Poppins", sans-serif;
+    }
+
+    #contact textarea {
+      min-height: 100px;
+    }
+
+    #contact button {
+      padding: 0.75rem 1rem;
+      background: #e100ff;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    #contact button:hover {
+      background: #7f00ff;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: #d9b3ff;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .container {
+        padding: 1.5rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <h1>Supriya Sri Perambudhur</h1>
-    <p>AI & ML Enthusiast | Aspiring Software Developer</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#certifications">Certifications</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <div class="container">
+    <header>
+      <img
+        src="https://via.placeholder.com/140?text=Supriya"
+        alt="Supriya Sri Perambudhur"
+        class="profile-pic"
+      />
+      <h1>Supriya Sri Perambudhur</h1>
+      <h2>Computer Science Graduate | AI & ML Enthusiast</h2>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>A motivated and detail-oriented Computer Science graduate seeking an opportunity to apply my technical skills in software development and problem-solving. Passionate about learning new technologies and contributing to innovative projects in a dynamic environment.</p>
-  </section>
+      <div class="contact-info">
+        <span>📞 +91 8639960018</span>
+        <span>📍 Hyderabad, India</span>
+        <a href="mailto:supriyasp1504@gmail.com" target="_blank"
+          >✉️ supriyasp1504@gmail.com</a
+        >
+      </div>
+      <div class="contact-info" style="margin-top: 0.4rem;">
+        <a href="https://www.linkedin.com/in/supriya-sri-perambudhur-8a650725b/" target="_blank"
+          >LinkedIn</a
+        >
+        <a href="https://github.com/Sp-supriya" target="_blank">GitHub</a>
+        <a href="https://www.hackerrank.com/profile/supriyasp15041" target="_blank"
+          >HackerRank</a
+        >
+        <a href="https://www.naukri.com/mnjuser/profile" target="_blank"
+          >Naukri</a
+        >
+      </div>
+    </header>
 
-  <section id="education">
-    <h2>Education</h2>
-    <p><strong>B.Tech in CSE (AI & ML)</strong>, Sreyas Institute of Engineering and Technology, CGPA: 7.9 (Expected 2025)</p>
-    <p><strong>Intermediate (MPC)</strong>, Sri Gayatri Junior College, CGPA: 9.08 (2019–2021)</p>
-    <p><strong>SSC</strong>, Raghunatha Model High School, CGPA: 9.2 (2019)</p>
-  </section>
+    <section id="about">
+      <h3>About Me</h3>
+      <p>
+        A motivated and detail-oriented Computer Science graduate seeking an
+        opportunity to apply my technical skills in software development and
+        problem-solving. Passionate about learning new technologies and
+        contributing to innovative projects in a dynamic environment.
+      </p>
+    </section>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>Python, Java, SQL, HTML, C, DSA</li>
-      <li>AI, ML, Data Analytics using Python</li>
-      <li>Google Colab, Postman, Power BI, Streamlit, Flask, VS Code, GitHub</li>
-      <li>Communication, Teamwork, Time Management, Leadership, Problem Solving</li>
-    </ul>
-  </section>
+    <section id="skills">
+      <h3>Skills</h3>
+      <ul>
+        <li>Python</li>
+        <li>Java</li>
+        <li>SQL</li>
+        <li>HTML</li>
+        <li>DSA</li>
+        <li>Git & GitHub</li>
+        <li>SDLC</li>
+        <li>AI & ML</li>
+        <li>C</li>
+        <li>Data Analytics (Python)</li>
+        <li>Google Colab</li>
+        <li>Postman</li>
+        <li>Power BI</li>
+        <li>Streamlit</li>
+        <li>Flask</li>
+        <li>VS Code</li>
+      </ul>
+    </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div>
-      <h3>Jarvis AI Desktop Assistant</h3>
-      <p>Developed an intelligent desktop assistant using speech recognition and NLP models (GPT/BERT) for task automation and voice-based commands.</p>
-    </div>
-    <div>
-      <h3>3D Neural Network for Bone Segmentation</h3>
-      <p>Designed a multi-scale attention-driven network to enhance precision in medical image analysis for orthopedic diagnostics.</p>
-    </div>
-    <div>
-      <h3>Autonomous Traffic Sign Recognition</h3>
-      <p>Built a CNN-based real-time system for traffic sign detection and classification to improve autonomous vehicle navigation.</p>
-    </div>
-  </section>
+    <section id="projects">
+      <h3>Projects</h3>
+      <ul>
+        <li>
+          <a
+            href="https://github.com/Sp-supriya/Fake_Products_Identification_using_Blockchain"
+            target="_blank"
+            >Fake Products Identification using Blockchain</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://github.com/Sp-supriya/Enhancing-IoT-Security-Hybrid-Machine-Learning-for-Botnet-Attack-Detection"
+            target="_blank"
+            >Enhancing IoT Security: Hybrid Machine Learning for Botnet Attack Detection</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://github.com/Sp-supriya/Urban-Traffic-Tiny-Object-Detection-via-Attention-and-Multi-Scale-Feature-Driven-in-UAV-Vision"
+            target="_blank"
+            >Urban Traffic Tiny Object Detection via Attention and Multi-Scale Feature Driven in UAV Vision</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://github.com/Sp-supriya/JARVIS-AI-Desktop-Assistant-"
+            target="_blank"
+            >JARVIS AI Desktop Assistant</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://github.com/Sp-supriya/IPL-Score-Prediction-using-Deep-Learning"
+            target="_blank"
+            >IPL Score Prediction using Deep Learning</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://github.com/Sp-supriya/Heart-Disease-Prediction-using-ANN"
+            target="_blank"
+            >Heart Disease Prediction using ANN</a
+          >
+        </li>
+        <li>
+          <a href="https://github.com/Sp-supriya/HCDS-Projects" target="_blank"
+            >HCDS 31 Projects</a
+          >
+        </li>
+      </ul>
+    </section>
 
-  <section id="certifications">
-    <h2>Certifications</h2>
-    <ul>
-      <li>Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate</li>
-      <li>Introduction to Modern AI – Cisco Networking Academy</li>
-      <li>Python – Pearson, Certiport</li>
-      <li>SQL Explorer Badge – Oracle</li>
-      <li>Cloud Computing – NPTEL</li>
-      <li>Oracle Certified Professional – Oracle APEX Cloud Developer (1Z0-771)</li>
-      <li>HTML and CSS – Meta (Coursera)</li>
-    </ul>
-  </section>
+    <section id="certifications">
+      <h3>Certifications</h3>
+      <ul>
+        <li>Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate</li>
+        <li>Introduction to Modern AI – Cisco Networking Academy</li>
+        <li>Python (Information Technology Specialist) – Pearson, Certiport</li>
+        <li>SQL Explorer badge – Mylearn.Oracle</li>
+        <li>Cloud Computing – NPTEL</li>
+        <li>Oracle Certified Professional – Oracle APEX Cloud Developer (1Z0-771)</li>
+        <li>HTML and CSS – Meta (Coursera)</li>
+      </ul>
+    </section>
 
-  <section id="achievements">
-    <h2>Achievements</h2>
-    <ul>
-      <li>TCS iON NQT Qualified</li>
-      <li>ELITE + SILVER Badge – NPTEL</li>
-      <li>Qualified in AMCAT Exam</li>
-      <li>Gold Badge – HackerRank</li>
-      <li>Certiport Badge – Credly</li>
-      <li>Verified Badge – Cisco (Credly)</li>
-    </ul>
-  </section>
+    <section id="achievements">
+      <h3>Achievements</h3>
+      <ul>
+        <li>Qualified TCS iON NQT exam with score of 67%</li>
+        <li>Earned the ELITE + SILVER BADGE from NPTEL</li>
+        <li>Qualified in AMCAT Exam</li>
+        <li>Earned Gold Badge on HackerRank</li>
+        <li>Awarded the Certiport badge via Credly</li>
+        <li>Recognized by Cisco with a verified badge on Credly</li>
+      </ul>
+    </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:supriyasp1504@gmail.com">supriyasp1504@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/supriya-sri-perambudhur-8a650725b/" target="_blank">Supriya's Profile</a></p>
-    <p>GitHub: <a href="https://github.com/" target="_blank">github.com/</a></p>
-    <p>Phone: +91 8639960018</p>
-    <p>Location: Hyderabad, India</p>
-  </section>
+    <section id="interests">
+      <h3>Interests and Hobbies</h3>
+      <ul>
+        <li>Reading Technology Books and Journals (AI, machine learning, blockchain)</li>
+        <li>Solving Algorithm and Data Structure Problems</li>
+        <li>Smart Home Automation and IoT</li>
+        <li>Watching Motivational and Tech Talks on YouTube</li>
+        <li>Learning New Programming Languages and Frameworks</li>
+      </ul>
+    </section>
 
-  <footer>
-    <p>© 2025 Supriya Sri Perambudhur</p>
-  </footer>
+    <section id="contact">
+      <h3>Let's work together on your next project.</h3>
+      <p>
+        I'm always eager to take on new challenges and collaborate on
+        interesting projects. If you have any questions or would like to discuss
+        a potential opportunity, please reach out using the contact form below.
+      </p>
+      <form
+        action="https://formspree.io/f/mayvlazp"
+        method="POST"
+        id="contactForm"
+      >
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required />
+
+        <label for="email">Email *</label>
+        <input
+          type="email"
+          id="email"
+          name="_replyto"
+          placeholder="Your Email"
+          required
+        />
+
+        <label for="message">Message *</label>
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Write your message here..."
+          required
+        ></textarea>
+
+        <button type="submit">Send message</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>© 2025 Supriya Sri Perambudhur | Designed by Supriya</p>
+    </footer>
+  </div>
 </body>
+
 </html>
